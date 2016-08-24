@@ -34,8 +34,8 @@ data = [trace]
 
 layout = go.Layout(
         title='Approximating the derivative using the limit definition',
-        width=800,
-        height=640,
+        width=500,
+        height=340,
         xaxis = dict(title ='Values of h'),
         yaxis = dict(title = 'The Approximation Error')
         )
