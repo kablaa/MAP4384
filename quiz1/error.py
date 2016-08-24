@@ -36,8 +36,8 @@ layout = go.Layout(
         title='Approximating the derivative using the limit definition',
         width=800,
         height=640,
-        xaxis = dict(title ='h valyes'),
-        yaxis = dict(title = 'error')
+        xaxis = dict(title ='Values of h'),
+        yaxis = dict(title = 'The Approximation Error')
         )
 fig = go.Figure(data =data, layout=layout)
 py.image.save_as(fig, filename='images/graph.png')

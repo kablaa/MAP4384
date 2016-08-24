@@ -1,4 +1,6 @@
-ALL: error
+ALL: 
+	make img
+	make tex
 
 img:
 	python error.py

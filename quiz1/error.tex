@@ -1,21 +1,42 @@
 \documentclass{article}
 \usepackage{graphicx}
 \graphicspath{ {images/} }
-\usepackage[utf8]{inputenc}
 
-\title{MAP4384}
-\author{tlukasiewicz }
-\date{August 2016}
+\title{MAP-4384 Quiz 1}
+\author{Tyler Lukasiewicz }
 
 \begin{document}
 
 \maketitle
 
-\section{Quiz 1}
-\begin{equation}
-    f'(x) = \lim _ {x \to \infty }
-\end{equation}
+    \section{Approximation Of The Derivative}
+    The derivative of a continuous function $f$ is defined by the following equation. 
 
-\includegraphics[scale = .5]{graph}
+    \begin{equation}
+        f'(x) = \lim _ {h \to 0 } \frac{f(x+h) - f(x)}{h} 
+    \end{equation}
+
+    So, if we would like to approximate the derivative of a continuous function $f$ at a point $x$, then we may use the formula
+
+    \begin{equation}
+        f'(x) \approx  f_a(x) = \frac{f(x+h) - f(x)}{h} 
+    \end{equation}
+
+    For some $h$. As $h \to 0$, $f_a'(x) \to f(x)$. We can determine the error or our approximation,  $\epsilon$ with the formula 
+
+    \begin{equation}
+        \epsilon = |f'(x) - f_a(x)|
+    \end{equation}
+
+    Below is a graph of the error, $\epsilon$ of the  aprixmate derivative of $\sin (\pi / 3)$.
+
+    \begin{figure}[!ht]
+       \begin{center}
+           \includegraphics[scale=.25]{graph}
+       \end{center}
+        \label{fig:1}
+    \end{figure}
+
+    As we can see, as $h \to 0$, $\epsilon \to 0$.
+
 \end{document}
-
