@@ -21,7 +21,6 @@ for i in range(0,10):
 
 for h in hVals:
     errVals.append(error(approx(x,h),math.cos(x)))
-    print "%f           %f" % (h,errVals[len(errVals)-1])
 
 
 py.sign_in('kablaa', 'hyi1epcr60')
@@ -41,6 +40,6 @@ layout = go.Layout(
         yaxis = dict(title = 'error')
         )
 fig = go.Figure(data =data, layout=layout)
-py.image.save_as(fig, filename='graph.png')
+py.image.save_as(fig, filename='images/graph.png')
 
 
