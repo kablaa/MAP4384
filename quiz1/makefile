@@ -1,0 +1,2 @@
+ALL:
+	python error.py
