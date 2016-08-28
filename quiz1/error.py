@@ -1,6 +1,6 @@
 import math
 import plotly.plotly as py
-from plotly.graph_objs import *
+import plotly.graph_objs as go
 
 def f(x):
     return math.sin(x)
@@ -12,52 +12,34 @@ def approx(x,h):
     return float((f(x + h) - f(x))/h)
 
 hVals = []
-approxVals = []
-exactVlas = []
 errVals = []
 x = float(math.pi/3)
 
 #getting our h values
-for i in range(0,100):
+for i in range(0,10):
     hVals.append(float(1/float(pow(2,i))))
 
 for h in hVals:
-    approxVals.append(approx(x,h))
-    exactVlas.append(math.cos(x))
-    hVals.append(h)
     errVals.append(error(approx(x,h),math.cos(x)))
-    print " %f  %f   %f  %f" % (h,approx(x,h) , math.cos(x), error(approx(x,h),math.cos(x)))
 
 
-trace1 = Scatter(
-        x =hVals,
-        y = errVals,
-        line=Line(color='rgb(231,107,243)'),
-        mode = "lines"
+py.sign_in('kablaa', 'hyi1epcr60')
+errAxis = ["h = %f" % h for h in hVals]
+trace = go.Scatter(
+        x =errAxis,
+        y = errVals
         )
+data = [trace]
 
-layyout = Layout(
-    paper_bgcolor='rgb(255,255,255)',
-    plot_bgcolor='rgb(229,229,229)',
-    xaxis=XAxis(
-        gridcolor='rgb(255,255,255)',
-        range=[1,10],
-        showgrid=True,
-        showline=False,
-        showticklabels=True,
-        tickcolor='rgb(127,127,127)',
-        ticks='outside',
-        zeroline=False
-    ),
-    yaxis=YAxis(
-        gridcolor='rgb(255,255,255)',
-        showgrid=True,
-        showline=False,
-        showticklabels=True,
-        tickcolor='rgb(127,127,127)',
-        ticks='outside',
-        zeroline=False
-    ),
-)
-fig = Figure(data=data, layout=layout)
-py.iplot(fig, filename= 'shaded_lines')
+
+layout = go.Layout(
+        title='Approximating the derivative using the limit definition',
+        width=500,
+        height=340,
+        xaxis = dict(title ='Values of h'),
+        yaxis = dict(title = 'The Approximation Error')
+        )
+fig = go.Figure(data =data, layout=layout)
+py.image.save_as(fig, filename='images/graph.png')
+
+
