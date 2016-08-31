@@ -22,6 +22,9 @@ data = []
 for i in range(0,20):
     data.append(random.uniform(0,200))
 
+for x in data:
+    print x
+
 m = mean(data)
 
 v = variance(data,m)
