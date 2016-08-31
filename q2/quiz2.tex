@@ -1,0 +1,37 @@
+\documentclass{article}
+\title{Quiz 2}
+\author{Tyler Lukasiewicz}
+
+
+\usepackage{amsmath}
+
+\begin{document}
+\maketitle
+
+Prove 
+\begin{equation}
+    v = \frac{1}{n-1} \sum_{i =1}^n (x_i - \mu)^2 = \frac{1}{n-1} (\sum_{i = 1}^n x_i ^2 -n \mu ^2)
+\end{equation}
+
+Solution:
+
+\begin{align*}
+    v &= \frac{1}{n-1} \sum_{i =1}^n (x_i - \mu)^2 \\
+    &= \frac{1}{n-1}(\sum_{i=1}^n (x_i^2 - 2 x_i \mu  + \mu ^2)) \\
+    &= \frac{1}{n-1} (\sum_{i=1}^n x_i^2 - 2 \mu \sum_{i=1}^n x_i + n \mu^2) \\
+    &=  \frac{1}{n-1} (\sum_{i=1}^n x_i^2  - 2 n \mu ^2 + n \mu ^2) \\
+    &= \frac{1}{n-1}(\sum_{i=1}^n x_2^2 - n \mu ^2)
+\end{align*}
+
+\begin{align*}
+    error(va): &0.000000000010231815394945442677 \\
+    error(vairiance): &0.000000000000000000000000000000
+\end{align*}
+
+
+The better approximation is
+\begin{equation*}
+     v = \frac{1}{n-1} \sum_{i =1}^n (x_i - \mu)^2 
+\end{equation*}
+
+\end{document}
