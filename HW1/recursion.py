@@ -1,12 +1,11 @@
+from __future__ import division
 from math import exp
 
-numVals =20
 
 def recursiveP(n):
     if n <= 0:
         return 1
     else:
-
         return exp(1) - (n+1)*recursiveP(n-1)
 
 def alt(n):
@@ -16,6 +15,12 @@ def alt(n):
         p = exp(1) - (i+1)*p
     return p
 
-alt(20)
+def alt2(n):
+    p = 100
+    for i in reversed(range(1,n+1)):
+        print "i: %d    %.30f" % (i,p)
+        p = p/(exp(1) - i)
+
+alt2(20)
 
 

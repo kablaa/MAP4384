@@ -8,6 +8,6 @@ def err(exact,approx):
 def approx(n):
     return pow(1 + (1/n) ,n)
 
-for i in range(0,11):
+for i in range(0,41):
     n = pow(8,i)
-    print "exact: %f       approx: %f         error:%f" % ( exp(1), approx(n) , err(exp(1),approx(n)) )
+    print " i: %d  exact: %.30f       approx: %.30f         error: %.30f" % ( i,exp(1), approx(n) , err(exp(1),approx(n)) )

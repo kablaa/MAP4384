@@ -7,14 +7,14 @@ x = .5
 errMax = None
 iMax = None
 
-for i in range(0,10):
+for i in range(0,30):
     h = .25*h
     y = (sin(x + h) - sin(x)) / h
     error = abs(cos(x) - y )
-    print "%d       %f      %f      %f" % (i,h,y,error)
+    print "%d       %.30f      %.30f      %.30f" % (i,h,y,error)
     if error > errMax:
         errMax = error
         iMax = i
-print "i: %d        max Error: %f" % (iMax, errMax)
+print "i: %d        max Error: %.30f" % (iMax, errMax)
 
 
